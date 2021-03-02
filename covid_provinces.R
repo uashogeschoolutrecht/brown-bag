@@ -89,8 +89,10 @@ data_per_day_province %>%
   ggplot(aes(
     x = per_week, 
     y = hosp_per_week)) +
-  geom_line(aes(colour = province, group = province)) +
-  facet_wrap(~province)
+  geom_line(aes(colour = province, group = province),
+            show.legend = FALSE) +
+  facet_wrap(~province) +
+  toolboxr::rotate_axis_labels("x", 90)
 
   # Let's fix some things
   # - rotate axis
